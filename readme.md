@@ -89,7 +89,7 @@ Welcome Message
 4. **Logout**
     - Provides an option to log out of the application.
 
-## **API Endpoint s**
+## **API Endpoints**
 
 - **POST /login**: Authenticate user.
 - **POST /register**: Register a new user.
