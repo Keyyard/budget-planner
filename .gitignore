@@ -3,10 +3,10 @@ print_directory_structure.py
 pytest_cache/
 node_modules/
 .git/
-.env
-venv/
 tempCodeRunnerFile.py
-
+.env
+venv/secret.env
+frontend/secret.env
 # Logs
 logs
 *.log

@@ -8,8 +8,8 @@ load_dotenv(dotenv_path='venv/secret.env')
 
 app = Flask(__name__)
 CORS(app)
-app.config['DATABASE'] = 'database.db'
-app.config['JWT_SECRET_KEY'] = os.getenv('JWT_SECRET_KEY') 
+app.config['DATABASE'] = os.getenv('DATABASE')  # Default to SQLite if not set
+app.config['JWT_SECRET_KEY'] = os.getenv('JWT_SECRET_KEY')
 jwt = JWTManager(app)
 
 from .db import get_db, close_db

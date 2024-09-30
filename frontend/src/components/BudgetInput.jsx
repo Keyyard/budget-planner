@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
+import { API_BASE_URL } from '../config';
 
 const BudgetInput = ({ addTransaction }) => {
   const [amount, setAmount] = useState("");
@@ -9,7 +10,7 @@ const BudgetInput = ({ addTransaction }) => {
   useEffect(() => {
     const fetchTags = async () => {
       try {
-        const res = await fetch("http://127.0.0.1:5000/tags", {
+        const res = await fetch("${API_BASE_URL}/tags", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("access_token")}`,
           },
@@ -34,7 +35,7 @@ const BudgetInput = ({ addTransaction }) => {
       console.log("Submitting transaction:", transaction); // Debugging statement
       console.log("JWT Token:", localStorage.getItem("access_token")); // Debugging statement
       try {
-        const res = await fetch("http://127.0.0.1:5000/transactions", {
+        const res = await fetch("${API_BASE_URL}/transactions", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

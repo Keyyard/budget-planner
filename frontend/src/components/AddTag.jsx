@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { API_BASE_URL } from '../config';
 
 const AddTag = ({ onAddTag }) => {
   const [tagName, setTagName] = useState('');
@@ -15,7 +16,7 @@ const AddTag = ({ onAddTag }) => {
           return;
         }
 
-        const res = await fetch('http://127.0.0.1:5000/tags', {
+        const res = await fetch('${API_BASE_URL}/tags', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

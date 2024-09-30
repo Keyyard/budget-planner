@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Toaster, toast } from "react-hot-toast";
+import { API_BASE_URL } from '../config';
 
 const RegisterForm = () => {
   const [username, setUsername] = useState("");
@@ -13,7 +14,7 @@ const RegisterForm = () => {
       return;
     }
     try {
-      const res = await fetch("http://127.0.0.1:5000/register", {
+      const res = await fetch("${API_BASE_URL}/register", {
         // Ensure the URL is correct
         method: "POST",
         headers: {

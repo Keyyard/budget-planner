@@ -14,6 +14,7 @@ import {
   FormControl,
 } from "@mui/material";
 import { Toaster, toast } from "react-hot-toast";
+import { API_BASE_URL } from '../config';
 
 const RecentTransactions = () => {
   const [transactions, setTransactions] = useState([]);
@@ -25,7 +26,7 @@ const RecentTransactions = () => {
   useEffect(() => {
     const fetchTags = async () => {
       try {
-        const res = await fetch("http://127.0.0.1:5000/tags", {
+        const res = await fetch("${API_BASE_URL}/tags", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("access_token")}`,
           },
@@ -43,7 +44,7 @@ const RecentTransactions = () => {
 
     const fetchTransactions = async () => {
       try {
-        const res = await fetch("http://127.0.0.1:5000/transactions", {
+        const res = await fetch("${API_BASE_URL}/transactions", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("access_token")}`,
           },
@@ -96,7 +97,7 @@ const RecentTransactions = () => {
   const handleEditConfirm = async () => {
     try {
       const res = await fetch(
-        `http://127.0.0.1:5000/transactions/${currentTransaction.id}`,
+        `${API_BASE_URL}/transactions/${currentTransaction.id}`,
         {
           method: "PUT",
           headers: {
@@ -128,7 +129,7 @@ const RecentTransactions = () => {
   const handleDeleteConfirm = async () => {
     try {
       const res = await fetch(
-        `http://127.0.0.1:5000/transactions/${currentTransaction.id}`,
+        `${API_BASE_URL}/transactions/${currentTransaction.id}`,
         {
           method: "DELETE",
           headers: {

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Toaster, toast } from "react-hot-toast";
+import { API_BASE_URL } from '../config';
 
 const LoginForm = () => {
   const [username, setUsername] = useState("");
@@ -8,7 +9,7 @@ const LoginForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://127.0.0.1:5000/login", {
+      const res = await fetch("${API_BASE_URL}/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
