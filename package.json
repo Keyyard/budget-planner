@@ -1,0 +1,15 @@
+{
+  "name": "budget-planner",
+  "scripts": {
+    "dev:server": "python -m backend.app",
+    "dev:client": "cd ./frontend && npm run dev",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^9.0.1",
+    "react-hot-toast": "^2.4.1"
+  }
+}

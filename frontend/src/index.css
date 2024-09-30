@@ -1,0 +1,28 @@
+@import url('./assets/fonts.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #628A62;
+  --bg-color: #F2F7F2;
+  --text-color: #0C110C;
+  --nav-text-color: #F2F7F2;
+}
+
+.dark {
+  --primary-color: #49684A;
+  --bg-color: #0C110C;
+  --text-color: #F2F7F2;
+  --nav-text-color: #F2F7F2;
+}
+
+
+body {
+  font-family: 'Barlow', sans-serif;
+}
+
+h1 {
+  font-family: 'IBMPlexSans', sans-serif;
+}
